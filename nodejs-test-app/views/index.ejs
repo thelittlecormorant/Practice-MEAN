@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="TestApp">
+
+<head>
+    <title>The MEAN Stack</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+</head>
+
+<body ng-controller="MainController as vm">
+    <ul>
+        <li ng-repeat="person in vm.people">
+            {{person.name}}
+        </li>
+    </ul>
+    <ul>
+        <li ng-repeat="god in vm.god">
+            {{god.name}}
+        </li>
+
+    </ul>
+
+    <ul>
+        <li ng-repeat="index in vm.testArr2">
+            {{index}}
+        </li>
+
+    </ul>
+
+
+
+    <script>
+
+        var clientPeople = <%- JSON.stringify(serverPeople) %>;
+
+        var clientGodFromServer = <%- god%>;
+
+        var clientGod = [
+            { name: 'zeus' }, 
+            { name: 'hades' }, 
+            { name: 'poseidon' }
+        ];
+
+    </script>
+    <script src="/assets/js/app.js"></script>
+</body>
+
+</html>
